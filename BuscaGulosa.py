@@ -11,6 +11,9 @@ j = [3,"I",45,"F",122,"K",36]
 k = [3,"J",36,"F",112,"M",32]
 l = [2,"C",80,"M",102]
 
+distancia = ["A",223,"B",222,"C",166,"D",192,"E",165,"F",136,"G",122,"H",111,"I",100,"J",60,"K",32,"L",102]
+
+
 node_atual = None
 node_path = []
 custo = 0
@@ -25,9 +28,9 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "A":
         for x in range(0,len(a)):
             if a[x] == "B":
-                topzera_1 = a[x + 1]
+                topzera_1 = distancia[3]
             if a[x] == "C":
-                topzera_2 = a[x + 1]
+                topzera_2 = distancia[5]
         if topzera_1 > topzera_2:
             node_path.append("C")
             node_atual = "c"
@@ -38,10 +41,10 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "B":
         for x in range(0,len(b)):
             if b[x] == "A":
-                topzera_1 = b[x + 1]
+                topzera_1 = distancia[3]
                 print(topzera_1)
             if b[x] == "D":
-                topzera_2 = b[x + 1]
+                topzera_2 = distancia[7]
                 print(topzera_2)
         if topzera_1 > topzera_2:
             node_path.append("D")
@@ -53,13 +56,13 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "C":
         for x in range(0,len(c)):
             if c[x] == "A":
-                topzera_1 = c[x + 1
+                topzera_1 = distancia[1]
             if c[x] == "D":
-                topzera_2 = b[x + 1]
+                topzera_2 = distancia[7]
             if c[x] == "F":
-                topzera_3 = c[x + 1]
+                topzera_3 = distancia[11]
             if c[x] == "L":
-                topzera_4 = c[x + 1]
+                topzera_4 = distancia[23]
         if topzera_1 < topzera_2 and topzera_1 < topzera_3 and topzera_1 < topzera_4:
             node_path.append("A")
             node_atual = "a"
@@ -76,11 +79,11 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "D":
         for x in range(0,len(d)):
             if d[x] == "B":
-                topzera_1 = d[x + 1]
+                topzera_1 = 3
             if d[x] == "C":
-                topzera_2 = d[x + 1]
+                topzera_2 = distancia[5]
             if d[x] == "E":
-                topzera_3 = d[x + 1]
+                topzera_3 = distancia[9]
         if topzera_1 < topzera_2 and topzera_1 < topzera_3:
             node_path.append("B")
             node_atual = "b"
@@ -94,9 +97,9 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "E":
         for x in range(0,len(e)):
             if e[x] == "D":
-                topzera_1 = e[x + 1]
+                topzera_1 = distancia[7]
             if e[x] == "G":
-                topzera_2 = e[x + 1]
+                topzera_2 = distancia[13]
         if topzera_1 > topzera_2:
             node_path.append("G")
             node_atual = "g"
@@ -107,11 +110,11 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "F":
         for x in range(0,len(f)):
             if f[x] == "C":
-                topzera_1 = f[x + 1]
+                topzera_1 = distancia[5]
             if f[x] == "K":
-                topzera_2 = f[x + 1]
+                topzera_2 = distancia[21]
             if f[x] == "J":
-                topzera_3 = f[x + 1]
+                topzera_3 = distancia[19]
         if topzera_1 < topzera_2 and topzera_1 < topzera_3:
             node_path.append("C")
             node_atual = "c"
@@ -125,9 +128,9 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "G":
         for x in range(0,len(g)):
             if g[x] == "E":
-                topzera_1 = g[x + 1]
+                topzera_1 = distancia[9]
             if b[x] == "H":
-                topzera_2 = g[x + 1]
+                topzera_2 = distancia[15]
         if topzera_1 > topzera_2:
             node_path.append("H")
             node_atual = "h"
@@ -138,9 +141,9 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "H":
         for x in range(0,len(h)):
             if h[x] == "G":
-                topzera_1 = h[x + 1]
+                topzera_1 = distancia[13]
             if h[x] == "I":
-                topzera_2 = h[x + 1]
+                topzera_2 = distancia[17]
         if topzera_1 > topzera_2:
             node_path.append("I")
             node_atual = "i"
@@ -151,9 +154,9 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "I":
         for x in range(0,len(i)):
             if i[x] == "H":
-                topzera_1 = i[x + 1]
+                topzera_1 = distancia[15]
             if i[x] == "J":
-                topzera_2 = i[x + 1]
+                topzera_2 = distancia[19]
         if topzera_1 > topzera_2:
             node_path.append("J")
             node_atual = "j"
@@ -164,9 +167,9 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "J":
         for x in range(0,len(j)):
             if j[x] == "I":
-                topzera_1 = j[x + 1]
+                topzera_1 = distancia[17]
             if j[x] == "F":
-                topzera_2 = j[x + 1]
+                topzera_2 = distancia[11]
             if j[x] == "K":
                 topzera_3 = j[x + 1]
         if topzera_1 < topzera_2 and topzera_1 < topzera_3:
@@ -182,11 +185,11 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "K":
         for x in range(0,len(k)):
             if k[x] == "J":
-                topzera_1 = k[x + 1]
+                topzera_1 = distancia[19]
             if k[x] == "F":
-                topzera_2 = k[x + 1]
+                topzera_2 = distancia[11]
             if k[x] == "M":
-                topzera_3 = k[x + 1]
+                topzera_3 = 0
         if topzera_1 < topzera_2 and topzera_1 < topzera_3:
             node_path.append("J")
         if topzera_2 < topzera_1 and topzera_2 < topzera_3:
@@ -199,9 +202,9 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "L":
         for x in range(0,len(l)):
             if l[x] == "C":
-                topzera_1 = l[x + 1]
+                topzera_1 = distancia[5]
             if l[x] == "M":
-                topzera_2 = l[x + 1]
+                topzera_2 = 0
         if topzera_1 > topzera_2:
             node_path.append("M")
             node_atual = "m"

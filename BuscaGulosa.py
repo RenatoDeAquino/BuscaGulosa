@@ -79,7 +79,7 @@ while node_atual.upper() != "M":
     if node_atual.upper() == "D":
         for x in range(0,len(d)):
             if d[x] == "B":
-                topzera_1 = 3
+                topzera_1 = distancia[3]
             if d[x] == "C":
                 topzera_2 = distancia[5]
             if d[x] == "E":
